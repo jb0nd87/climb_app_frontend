@@ -2,18 +2,25 @@ import React, { useContext } from 'react';
 import LogOutBtn from '../LogOutBtn/LogOutBtn';
 import { GlobalContext } from '../../App';
 import './Header.css';
-import { Nav, Navbar } from 'react-bootstrap';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 export default function Header(props) {
 	const { gState, setGState } = useContext(GlobalContext);
 
 	const loggedIn = (
 		<>
-			<Navbar expand='md'>
+			<Navbar bg='dark' variant='dark' expand='md'>
 				<Navbar.Brand href='/'>
-					<div id='nav-logo'></div>
+					<div id='nav-logo'>
+						<i className='fas fa-mountain'></i> Climb Time!
+					</div>
 				</Navbar.Brand>
-				<Navbar.Toggle aria-controls='basic-navbar-nav' id='hamburger' />
+				<Navbar.Toggle
+					aria-controls='basic-navbar-nav'
+					className='navbar-dark'
+					id='hamburger'
+				/>
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='ml-auto'>
 						<Nav.Link>
@@ -32,8 +39,12 @@ export default function Header(props) {
 
 	const loggedOut = (
 		<>
-			<Navbar expand='md'>
-				<Navbar.Brand href='/'></Navbar.Brand>
+			<Navbar bg='dark' variant='dark' expand='md'>
+				<Navbar.Brand href='/'>
+					<div id='nav-logo'>
+						<i className='fas fa-mountain'></i> Climb Time!
+					</div>
+				</Navbar.Brand>
 				<Navbar.Toggle
 					aria-controls='basic-navbar-nav'
 					className='navbar-dark'
@@ -48,8 +59,8 @@ export default function Header(props) {
 						<Nav.Link href='/about'>About</Nav.Link>
 					</Nav>
 					<p className='welcome-msg'>
-						Welcome <span className='logged-in-email'>Climb Time!</span>! Sign
-						up, sign in, or try a demo for help making time for self-care.
+						Welcome <span className='logged-in-email'>to Climb Time!</span>!
+						Sign up or sign in.
 					</p>
 				</Navbar.Collapse>
 			</Navbar>

@@ -8,7 +8,7 @@ import ClimbListForm from './Components/ClimbList/ClimbList';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import About from './Components/About/About';
-// import User from './Components/User/User'
+import User from './Components/User/User'
 
 export const GlobalContext = createContext(null);
 
@@ -149,15 +149,16 @@ function App() {
 				<main>
 					<Switch>
 						<Route exact path='/'>
-							<h1 id='home-logo'></h1>
+							<h1 id='home-logo'>
+								<i class='fas fa-mountain'></i>Climb Time!
+							</h1>
 							<h2 className='motto'>
-								Climb Time!<span className='blink_me1'>.</span> go from Gumby to
-								Pro in no time!
+								Climb Time! Go from Gumby to Pro in no time!
 							</h2>
 							<hr></hr>
 							<h4>
 								Climb Time! The app for climbers of all levels to have fun and
-								explore the world we live in! {}
+								explore the world we live in!
 							</h4>
 							<h4 id='call-to-action'>Sign up/sign in!</h4>
 						</Route>
@@ -165,15 +166,13 @@ function App() {
 							path='/climblist'
 							render={(rp) => {
 								return (
-									<>
-										<ClimbList
-											{...rp}
-											climbList={climbList}
-											handleLike={handleLike}
-											handleDelete={handleDelete}
-											selectItem={selectItem}
-										/>
-									</>
+									<ClimbList
+										{...rp}
+										climbList={climbList}
+										handleLike={handleLike}
+										handleDelete={handleDelete}
+										selectItem={selectItem}
+									/>
 								);
 							}}
 						/>
@@ -209,21 +208,17 @@ function App() {
 						<Route
 							path='/signup'
 							render={(rp) => (
-								<>
 									<SignUpForm {...rp} />
-								</>
 							)}
 						/>
 						<Route
 							path='/login'
 							render={(rp) => (
-								<>
 									<LogInForm {...rp} />
-								</>
 							)}
 						/>
 						<Route path='/about'>
-								<About />
+							<About />
 						</Route>
 					</Switch>
 				</main>
