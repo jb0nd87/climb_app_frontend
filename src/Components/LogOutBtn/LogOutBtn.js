@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import './LogOutBtn.css';
+import './LogOutBtn.scss';
 import { GlobalContext } from '../../App';
 
 export default function LogOutBtn() {

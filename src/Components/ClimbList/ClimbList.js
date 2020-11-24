@@ -1,5 +1,5 @@
 import React from 'react'
-import './ClimbList.css'
+import './ClimbList.scss'
 
 function ClimbList() {
 

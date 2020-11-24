@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import ClimbList from './Components/ClimbList/ClimbList';
 import SignUpForm from './Components/SignUpForm/SignUpForm';
 import LogInForm from './Components/LogInForm/LogInForm';

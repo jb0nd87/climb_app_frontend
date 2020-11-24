@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import LogOutBtn from '../LogOutBtn/LogOutBtn';
 import { GlobalContext } from '../../App';
-import './Header.css';
+import './Header.scss';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
@@ -10,7 +10,7 @@ export default function Header(props) {
 
 	const loggedIn = (
 		<>
-			<Navbar bg='dark' variant='dark' expand='md'>
+			<Navbar expand='md'>
 				<Navbar.Brand href='/'>
 					<div id='nav-logo'>
 						<i className='fas fa-mountain'></i> Climb Time!
@@ -39,7 +39,7 @@ export default function Header(props) {
 
 	const loggedOut = (
 		<>
-			<Navbar bg='dark' variant='dark' expand='md'>
+			<Navbar expand='md'>
 				<Navbar.Brand href='/'>
 					<div id='nav-logo'>
 						<i className='fas fa-mountain'></i> Climb Time!
