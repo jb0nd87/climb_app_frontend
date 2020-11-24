@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import LogOutBtn from '../LogOutBtn/LogOutBtn';
 import { GlobalContext } from '../../App';
+import LogOutBtn from '../LogOutBtn/LogOutBtn';
 import './Header.scss';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -26,9 +26,9 @@ export default function Header(props) {
 						<Nav.Link>
 							<LogOutBtn />
 						</Nav.Link>
-						<Nav.Link href='/signup'>Sign up/Log in</Nav.Link>
+						<Nav.Link href='/signup'>Sign Up/Log In</Nav.Link>
 						<Nav.Link href='/map'>Map</Nav.Link>
-						<Nav.Link href='/climblist'>Climb list</Nav.Link>
+						<Nav.Link href='/climblist'>Climb List</Nav.Link>
 						<Nav.Link href='/about'>About</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
@@ -53,19 +53,18 @@ export default function Header(props) {
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='ml-auto'>
 						<br></br>
-						<Nav.Link href='/signup'>Sign up/Log in</Nav.Link>
+						<Nav.Link href='/signup'>Sign Up/Log In</Nav.Link>
 						<Nav.Link href='/map'>Map</Nav.Link>
-						<Nav.Link href='/climblist'>Climb list</Nav.Link>
+						<Nav.Link href='/climblist'>Climb List</Nav.Link>
 						<Nav.Link href='/about'>About</Nav.Link>
 					</Nav>
 					<p className='welcome-msg'>
 						Welcome <span className='logged-in-email'>to Climb Time!</span>!
-						Sign up or sign in.
+						Sign up or Log in today!
 					</p>
 				</Navbar.Collapse>
 			</Navbar>
 		</>
 	);
-
 	return gState.token ? loggedIn : loggedOut;
 }

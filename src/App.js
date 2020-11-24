@@ -4,11 +4,11 @@ import './App.scss';
 import ClimbList from './Components/ClimbList/ClimbList';
 import SignUpForm from './Components/SignUpForm/SignUpForm';
 import LogInForm from './Components/LogInForm/LogInForm';
-import ClimbListForm from './Components/ClimbList/ClimbList';
+import ClimbListForm from './Components/ClimbListForm/ClimbListForm';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import About from './Components/About/About';
-import User from './Components/User/User'
+import User from './Components/User/User';
 
 export const GlobalContext = createContext(null);
 
@@ -24,7 +24,7 @@ function App() {
 	const [selectedItem, setSelectedItem] = useState();
 
 	const selectItem = (item) => {
-		console.log('selecteditem', item);
+		console.log('selected item', item);
 		setSelectedItem(item);
 	};
 
@@ -35,7 +35,7 @@ function App() {
 
 	const handleCreate = async (newItem) => {
 		try {
-			const climbList = await fetch(gState.url + '/climblist/', {
+			const climbList = await fetch(gState.url + '/climblist', {
 				method: 'post',
 				headers: {
 					'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ function App() {
 				body: JSON.stringify(newItem),
 			});
 			const response = await climbList.json();
-			console.log('newItem: ', response);
+			console.log('new item: ', response);
 		} catch (error) {
 			console.log(error);
 		}
@@ -157,10 +157,10 @@ function App() {
 							</h2>
 							<hr></hr>
 							<h4>
-								Climb Time! The app for climbers of all levels to have fun and
-								explore the world we live in!
+								Climb Time! The app for climbers of all levels to have fun,
+								explore the world and get stronger together!
 							</h4>
-							<h4 id='call-to-action'>Sign up/sign in!</h4>
+							<h4 id='call-to-action'>Sign up or Sign in!</h4>
 						</Route>
 						<Route
 							path='/climblist'
@@ -198,7 +198,7 @@ function App() {
 								return (
 									<ClimbListForm
 										{...rp}
-										item={selectedItem}
+										item={selectItem}
 										handleSubmit={handleUpdate}
 										label='Update Item'
 									/>
@@ -207,17 +207,17 @@ function App() {
 						/>
 						<Route
 							path='/signup'
-							render={(rp) => (
-									<SignUpForm {...rp} />
-							)}
+							render={(rp) => {
+								<SignUpForm {...rp} />;
+							}}
 						/>
 						<Route
 							path='/login'
-							render={(rp) => (
-									<LogInForm {...rp} />
-							)}
+							render={(rp) => {
+								<LogInForm {...rp} />;
+							}}
 						/>
-						<Route path='/about'>
+						<Route path='About'>
 							<About />
 						</Route>
 					</Switch>

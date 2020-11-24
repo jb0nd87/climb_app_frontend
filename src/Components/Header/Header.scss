@@ -1,4 +1,9 @@
+@import '../../variables.scss';
+
 nav {
+
+    font-family: $text-font;
+
 	#nav-logo {
 		display: flex;
 		align-items: flex-end;
@@ -11,5 +16,12 @@ nav {
 
 	a:visited {
 		color: inherit;
-	}
+    }
+    
+    #hamburger {
+        background-color: #044a3a;
+        border: 1.5px solid white;
+        align-items: center;
+        justify-content: center;
+    }
 }
