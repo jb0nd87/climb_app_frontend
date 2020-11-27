@@ -5,15 +5,21 @@
   color: white;
   background-color: #79d1c3;
   font-family: $text-font;
+  margin: 0 auto;
 }
 
-footer {
-  bottom: 0;
-  z-index: 1;
-  position: fixed;
-  width: 100vw;
-  height: fit-content;
-  color: #044a3a;
-  font-size: 1rem;
-  text-align: right;
+main {
+  display: flex;
+  flex-direction: column;
+  width: 95vw;
+  margin: 0 auto;
+  height: 100%;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 10px 30px;
+  }
 }
