@@ -9,6 +9,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import About from './Components/About/About';
 import User from './Components/User/User';
+import Map from './Components/Map/Map'
 
 export const GlobalContext = createContext(null);
 
@@ -161,6 +162,9 @@ function App() {
 								explore the world and get stronger together!
 							</h4>
 							<h4 id='call-to-action'>Sign up or Sign in!</h4>
+						</Route>
+						<Route path='/map'>
+							<Map />
 						</Route>
 						<Route
 							path='/climblist'
