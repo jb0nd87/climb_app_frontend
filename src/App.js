@@ -217,7 +217,7 @@ function App() {
 								<LogInForm {...rp} />;
 							}}
 						/>
-						<Route path='About'>
+						<Route path='/about'>
 							<About />
 						</Route>
 					</Switch>
