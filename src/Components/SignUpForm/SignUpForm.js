@@ -14,7 +14,13 @@ export default function SignUpForm(props) {
 	};
 
 	const [formData, setFormData] = useState(emptyForm);
-	const [errorMsg, setErrorMessage] = useState('');
+    const [errorMsg, setErrorMessage] = useState('');
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        props.handleSignUp()
+        props.history.push('/wishlist')
+    }
 
 	const handleChange = (e) => {
 		const key = e.target.name;
