@@ -19,7 +19,7 @@ export default function SignUpForm(props) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         props.handleSignUp()
-        props.history.push('/wishlist')
+        props.history.push('/climblist')
     }
 
 	const handleChange = (e) => {
@@ -44,7 +44,7 @@ export default function SignUpForm(props) {
 					type='email'
 					name='email'
 					placeholder='email'
-					vaue={formData.email}
+					value={formData.email}
 					onChange={handleChange}
 				/>
 				<input

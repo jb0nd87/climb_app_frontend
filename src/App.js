@@ -9,24 +9,16 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import About from './Components/About/About';
 import User from './Components/User/User';
-import Map from './Components/Map/Map';
+// import Map from './Components/Map/Map';
 
 export const GlobalContext = createContext(null);
 
 function App() {
 	const [gState, setGState] = useState({
-		url: 'https://climbtimeappjgb.herokuapp.com',
+		url: 'https://climbtimeappbackend.herokuapp.com',
 		token: null,
 		email: null,
 	});
-
-	const [climbRoutes, setClimbRoutes] = useState([]);
-
-	const getRoutes = (routes) => {
-		fetch(
-			`https://www.mountainproject.com/data/get-routes?routeIds=105748391,105750454,105749956&key=200975930-afa020a42722ff7dca06f78999233be1`
-		);
-	};
 
 	const [climbList, setClimbList] = useState([]);
 
@@ -146,7 +138,6 @@ function App() {
 		if (token && email) {
 			setGState({ ...gState, token: token, email: email });
 			getClimbList(token);
-			getRoutes();
 		}
 	}, []);
 
@@ -172,9 +163,9 @@ function App() {
 							</h4>
 							<h4 id='call-to-action'>Sign up or Sign in!</h4>
 						</Route>
-						<Route path='/map'>
-							<Map />
-						</Route>
+						{/* <Route path='/map'>
+							<Map setClimbRoutes={setClimbRoutes} />
+						</Route> */}
 						<Route
 							path='/climblist'
 							render={(rp) => {
