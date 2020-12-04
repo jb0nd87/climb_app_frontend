@@ -8,6 +8,8 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function Header(props) {
+	const { gState, setGState } = useContext(GlobalContext)
+
 	return (
 		<Navbar collapseOnSelect expand='md'>
 			<LinkContainer to='/'>
@@ -18,6 +20,9 @@ export default function Header(props) {
 			<Navbar.Toggle aria-controls='responsive-navbar-nav' />
 			<Navbar.Collapse id='responsive-navbar-nav'>
 				<Nav className='mr-auto'>
+					<Nav.Link>
+						<LogOutBtn />
+					</Nav.Link>
 					<LinkContainer to='/signup'>
 						<Nav.Link>Sign Up/Log In</Nav.Link>
 					</LinkContainer>

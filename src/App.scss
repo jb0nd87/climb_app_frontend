@@ -8,19 +8,17 @@
   height: 95vh;
 }
 
-// main {
-//   display: flex;
-//   flex-direction: column;
-//   width: 95vw;
-//   margin: 0 auto;
-//   height: 100%;
-//   background-color: #79d1c3;
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: #79d1c3;
 
-//   h1,
-//   h2,
-//   h3,
-//   h4,
-//   h5 {
-//     margin: 10px 30px;
-//   }
-// }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 10px 20px;
+  }
+}

@@ -54,7 +54,7 @@ export default function ClimbList(props) {
 							props.selectItem(item);
 							props.history.push('/editform');
 						}}>
-						<i class='fas fa-edit'> </i>
+						<i className='fas fa-edit'> </i>
 					</button>
 				</div>
 			</div>
